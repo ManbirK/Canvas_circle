@@ -39,3 +39,19 @@ pen.strokeStyle = "red";
 pen.lineWidth = 10;
 pen.arc(400,500,40,0,2 * Math.PI);
 pen.stroke();
+
+Canvas.addEventListener("mousedown",my_mouse_down);
+
+function my_mouse_down(e){
+
+    pos_x = e.clientX - Canvas.offsetLeft;
+    pos_y = e.clientY - Canvas.offsetTop;
+
+    pen.beginPath();
+    pen.strokeStyle = "red";
+    pen.lineWidth = 10;
+    pen.arc(pos_x,pos_y,40,0,2 * Math.PI);
+    pen.stroke();
+
+
+}
