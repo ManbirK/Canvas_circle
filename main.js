@@ -1,57 +1,47 @@
-Canvas = document.getElementById("my_canvas");
+my_Canvas = document.getElementById("Drawing");
 
-pen = Canvas.getContext("2d");
+sheet = my_Canvas.getContext('2d');
 
-//document.getElementById("my_canvas").getContext('2d').beginPath();
-pen.beginPath();
-pen.strokeStyle = "green";
-pen.lineWidth = 5;
-pen.arc(300,300,40,0,2 * Math.PI);
-pen.stroke();
+pen_color = "green";
+pen_width = 6;
 
-// Aradhya
-pen.beginPath();
-pen.strokeStyle = "pink";
-pen.lineWidth = 6;
-pen.arc(400,400,100,0,2 * Math.PI);
-pen.stroke();
+sheet.beginPath();
+sheet.strokeStyle = pen_color;
+sheet.lineWidth = pen_width;
+sheet.arc(300,300,25,0,2 * Math.PI);
+sheet.stroke();
 
+sheet.beginPath();
+sheet.strokeStyle = "yellow";
+sheet.lineWidth = pen_width;
+sheet.arc(450,300,123,0,2 * Math.PI);
+sheet.stroke();
 
-// Ashita
-pen.beginPath();
-pen.strokeStyle = "purple";
-pen.lineWidth = 5;
-pen.arc(400,200,100,0,2 * Math.PI);
-pen.stroke();
+sheet.beginPath();
+sheet.strokeStyle = "red";
+sheet.lineWidth = pen_width;
+sheet.arc(410,423,90,0,2 * Math.PI);
+sheet.stroke();
 
+sheet.beginPath();
+sheet.strokeStyle = "blue";
+sheet.lineWidth = pen_width;
+sheet.arc(290,100,150,0,2 * Math.PI);
+sheet.stroke();
 
-//Khushi
-pen.beginPath();
-pen.strokeStyle = "lightblue";
-pen.lineWidth = 10;
-pen.arc(200,200,50,0,2 * Math.PI);
-pen.stroke();
-
-
-//Ojas
-pen.beginPath();
-pen.strokeStyle = "red";
-pen.lineWidth = 10;
-pen.arc(400,500,40,0,2 * Math.PI);
-pen.stroke();
-
-Canvas.addEventListener("mousedown",my_mouse_down);
+my_Canvas.addEventListener("mousedown",my_mouse_down);
 
 function my_mouse_down(e){
 
-    pos_x = e.clientX - Canvas.offsetLeft;
-    pos_y = e.clientY - Canvas.offsetTop;
-
-    pen.beginPath();
-    pen.strokeStyle = "red";
-    pen.lineWidth = 10;
-    pen.arc(pos_x,pos_y,40,0,2 * Math.PI);
-    pen.stroke();
+    pos_x = e.clientX - my_Canvas.offsetLeft;
+    pos_y = e.clientY - my_Canvas.offsetTop;
+    
+    
+sheet.beginPath();
+sheet.strokeStyle = "Purple";
+sheet.lineWidth = 4;
+sheet.arc(pos_x,pos_y,30,0,2 * Math.PI);
+sheet.stroke();
 
 
 }
